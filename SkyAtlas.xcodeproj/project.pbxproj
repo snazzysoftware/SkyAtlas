@@ -1,0 +1,215 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FAE9B3E16DE866E0014C9EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FAE9B3D16DE866E0014C9EF /* main.cpp */; };
+		9FAE9B4016DE866E0014C9EF /* SkyAtlas.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9FAE9B3716DE866E0014C9EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				9FAE9B4016DE866E0014C9EF /* SkyAtlas.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9FAE9B3916DE866E0014C9EF /* SkyAtlas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkyAtlas; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FAE9B3D16DE866E0014C9EF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SkyAtlas.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FAE9B3616DE866E0014C9EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FAE9B2E16DE866E0014C9EF = {
+			isa = PBXGroup;
+			children = (
+				9FAE9B3C16DE866E0014C9EF /* SkyAtlas */,
+				9FAE9B3A16DE866E0014C9EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FAE9B3A16DE866E0014C9EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FAE9B3916DE866E0014C9EF /* SkyAtlas */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FAE9B3C16DE866E0014C9EF /* SkyAtlas */ = {
+			isa = PBXGroup;
+			children = (
+				9FAE9B3D16DE866E0014C9EF /* main.cpp */,
+				9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */,
+			);
+			path = SkyAtlas;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FAE9B3816DE866E0014C9EF /* SkyAtlas */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FAE9B4316DE866E0014C9EF /* Build configuration list for PBXNativeTarget "SkyAtlas" */;
+			buildPhases = (
+				9FAE9B3516DE866E0014C9EF /* Sources */,
+				9FAE9B3616DE866E0014C9EF /* Frameworks */,
+				9FAE9B3716DE866E0014C9EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyAtlas;
+			productName = SkyAtlas;
+			productReference = 9FAE9B3916DE866E0014C9EF /* SkyAtlas */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FAE9B3016DE866E0014C9EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Adam French";
+			};
+			buildConfigurationList = 9FAE9B3316DE866E0014C9EF /* Build configuration list for PBXProject "SkyAtlas" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9FAE9B2E16DE866E0014C9EF;
+			productRefGroup = 9FAE9B3A16DE866E0014C9EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FAE9B3816DE866E0014C9EF /* SkyAtlas */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FAE9B3516DE866E0014C9EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FAE9B3E16DE866E0014C9EF /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9FAE9B4116DE866E0014C9EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9FAE9B4216DE866E0014C9EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9FAE9B4416DE866E0014C9EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FAE9B4516DE866E0014C9EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FAE9B3316DE866E0014C9EF /* Build configuration list for PBXProject "SkyAtlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FAE9B4116DE866E0014C9EF /* Debug */,
+				9FAE9B4216DE866E0014C9EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FAE9B4316DE866E0014C9EF /* Build configuration list for PBXNativeTarget "SkyAtlas" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FAE9B4416DE866E0014C9EF /* Debug */,
+				9FAE9B4516DE866E0014C9EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FAE9B3016DE866E0014C9EF /* Project object */;
+}
