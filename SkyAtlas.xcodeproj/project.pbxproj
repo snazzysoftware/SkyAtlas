@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F8FCFAE1703A88000AE9AB3 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F8FCFAC1703A88000AE9AB3 /* Sky.cpp */; };
+		9F8FCFB2170CCE9800AE9AB3 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F8FCFB0170CCE9800AE9AB3 /* Projection.cpp */; };
+		9F8FCFB5170CCEA800AE9AB3 /* StereographicProjection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F8FCFB3170CCEA800AE9AB3 /* StereographicProjection.cpp */; };
 		9FAE9B3E16DE866E0014C9EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FAE9B3D16DE866E0014C9EF /* main.cpp */; };
 		9FAE9B4016DE866E0014C9EF /* SkyAtlas.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */; };
+		9FAE9B4A16DE87210014C9EF /* Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FAE9B4816DE87200014C9EF /* Star.cpp */; };
+		9FAE9B4D16DFE73F0014C9EF /* stars.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FAE9B4716DE86D60014C9EF /* stars.dat */; };
+		9FAE9B5116E226930014C9EF /* Constellation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FAE9B4F16E226930014C9EF /* Constellation.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,12 +28,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		9FAE9B4C16DFE72E0014C9EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				9FAE9B4D16DFE73F0014C9EF /* stars.dat in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F8FCFAC1703A88000AE9AB3 /* Sky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sky.cpp; sourceTree = "<group>"; };
+		9F8FCFAD1703A88000AE9AB3 /* Sky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sky.h; sourceTree = "<group>"; };
+		9F8FCFB0170CCE9800AE9AB3 /* Projection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Projection.cpp; sourceTree = "<group>"; };
+		9F8FCFB1170CCE9800AE9AB3 /* Projection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Projection.h; sourceTree = "<group>"; };
+		9F8FCFB3170CCEA800AE9AB3 /* StereographicProjection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StereographicProjection.cpp; sourceTree = "<group>"; };
+		9F8FCFB4170CCEA800AE9AB3 /* StereographicProjection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StereographicProjection.h; sourceTree = "<group>"; };
 		9FAE9B3916DE866E0014C9EF /* SkyAtlas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkyAtlas; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAE9B3D16DE866E0014C9EF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SkyAtlas.1; sourceTree = "<group>"; };
+		9FAE9B4716DE86D60014C9EF /* stars.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stars.dat; sourceTree = "<group>"; };
+		9FAE9B4816DE87200014C9EF /* Star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Star.cpp; sourceTree = "<group>"; };
+		9FAE9B4916DE87200014C9EF /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
+		9FAE9B4E16E2264B0014C9EF /* constellations.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = constellations.dat; sourceTree = "<group>"; };
+		9FAE9B4F16E226930014C9EF /* Constellation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Constellation.cpp; sourceTree = "<group>"; };
+		9FAE9B5016E226930014C9EF /* Constellation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constellation.h; sourceTree = "<group>"; };
+		9FAE9B5216F25C260014C9EF /* lines.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lines.dat; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +70,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F8FCFAF170CCE5D00AE9AB3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9F8FCFB0170CCE9800AE9AB3 /* Projection.cpp */,
+				9F8FCFB1170CCE9800AE9AB3 /* Projection.h */,
+				9F8FCFB3170CCEA800AE9AB3 /* StereographicProjection.cpp */,
+				9F8FCFB4170CCEA800AE9AB3 /* StereographicProjection.h */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		9FAE9B2E16DE866E0014C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -60,10 +100,28 @@
 		9FAE9B3C16DE866E0014C9EF /* SkyAtlas */ = {
 			isa = PBXGroup;
 			children = (
+				9F8FCFAF170CCE5D00AE9AB3 /* View */,
+				9FAE9B4616DE86860014C9EF /* Model */,
 				9FAE9B3D16DE866E0014C9EF /* main.cpp */,
 				9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */,
 			);
 			path = SkyAtlas;
+			sourceTree = "<group>";
+		};
+		9FAE9B4616DE86860014C9EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FAE9B5216F25C260014C9EF /* lines.dat */,
+				9FAE9B4716DE86D60014C9EF /* stars.dat */,
+				9FAE9B4816DE87200014C9EF /* Star.cpp */,
+				9FAE9B4916DE87200014C9EF /* Star.h */,
+				9FAE9B4E16E2264B0014C9EF /* constellations.dat */,
+				9FAE9B4F16E226930014C9EF /* Constellation.cpp */,
+				9FAE9B5016E226930014C9EF /* Constellation.h */,
+				9F8FCFAC1703A88000AE9AB3 /* Sky.cpp */,
+				9F8FCFAD1703A88000AE9AB3 /* Sky.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,6 +134,7 @@
 				9FAE9B3516DE866E0014C9EF /* Sources */,
 				9FAE9B3616DE866E0014C9EF /* Frameworks */,
 				9FAE9B3716DE866E0014C9EF /* CopyFiles */,
+				9FAE9B4C16DFE72E0014C9EF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -118,6 +177,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FAE9B3E16DE866E0014C9EF /* main.cpp in Sources */,
+				9FAE9B4A16DE87210014C9EF /* Star.cpp in Sources */,
+				9FAE9B5116E226930014C9EF /* Constellation.cpp in Sources */,
+				9F8FCFAE1703A88000AE9AB3 /* Sky.cpp in Sources */,
+				9F8FCFB2170CCE9800AE9AB3 /* Projection.cpp in Sources */,
+				9F8FCFB5170CCEA800AE9AB3 /* StereographicProjection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +242,7 @@
 		9FAE9B4416DE866E0014C9EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /Users/adamfrench/boost/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -185,6 +250,7 @@
 		9FAE9B4516DE866E0014C9EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = /Users/adamfrench/boost/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -208,6 +274,7 @@
 				9FAE9B4516DE866E0014C9EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
