@@ -41,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9F0D1025170DF380002D12F1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		9F8FCFAC1703A88000AE9AB3 /* Sky.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sky.cpp; sourceTree = "<group>"; };
 		9F8FCFAD1703A88000AE9AB3 /* Sky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sky.h; sourceTree = "<group>"; };
 		9F8FCFB0170CCE9800AE9AB3 /* Projection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Projection.cpp; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		9FAE9B2E16DE866E0014C9EF = {
 			isa = PBXGroup;
 			children = (
+				9F0D1025170DF380002D12F1 /* README.md */,
 				9FAE9B3C16DE866E0014C9EF /* SkyAtlas */,
 				9FAE9B3A16DE866E0014C9EF /* Products */,
 			);
