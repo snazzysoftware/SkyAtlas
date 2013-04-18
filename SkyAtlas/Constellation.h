@@ -19,6 +19,7 @@ namespace SkyAtlas
 {
     enum ConstellationCode
     {
+        NONE,
         Andromeda,
         Antlia,
         Apus,
@@ -111,6 +112,7 @@ namespace SkyAtlas
     
     static const std::pair<ConstellationCode, std::string> ConstellationNames[] =
     {
+        std::pair<ConstellationCode, std::string>(NONE, ""),
         std::pair<ConstellationCode, std::string>(Andromeda, "And"),
         std::pair<ConstellationCode, std::string>(Antlia, "Ant"),
         std::pair<ConstellationCode, std::string>(Apus, "Aps"),

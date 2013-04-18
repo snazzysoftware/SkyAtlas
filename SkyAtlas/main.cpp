@@ -8,6 +8,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <boost/bimap.hpp>
+#include <boost/algorithm/string.hpp>
 #include "Star.h"
 #include "Constellation.h"
 #include "Sky.h"
@@ -75,7 +77,15 @@ void visitor(boost::shared_ptr<SkyAtlas::Star> star)
 
 int main(int argc, const char * argv[])
 {
-
+    // Build the constellation maps
+    typedef boost::bimap<SkyAtlas::ConstellationCode, std::string> mapType;
+    typedef boost::bimap<SkyAtlas::ConstellationCode, std::string>::value_type mapElementType;
+    mapType constellations;
+    for (size_t i = 0; i < sizeof(SkyAtlas::ConstellationNames) / sizeof(std::pair<SkyAtlas::ConstellationCode, std::string>); ++i)
+    {
+        constellations.insert(mapElementType(SkyAtlas::ConstellationNames[i].first, boost::to_upper_copy(SkyAtlas::ConstellationNames[i].second)));
+    }
+    
     // Create a sky to put the stars into
     boost::shared_ptr<SkyAtlas::SkyRectangle> wholeSkyRectangle(new SkyAtlas::SkyRectangle(0.0, 24.0, -90.0, 90.0));
     SkyAtlas::SkyGrid wholeSky(wholeSkyRectangle);
@@ -86,6 +96,20 @@ int main(int argc, const char * argv[])
     while (starsInput.good())
     {
         boost::shared_ptr<SkyAtlas::Star> star(new SkyAtlas::Star(starsInput));
+        
+        boost::trim(star->constellation);
+        
+        mapType::right_const_iterator findIt = constellations.right.find(star->constellation);
+        if (findIt != constellations.right.end())
+        {
+            SkyAtlas::ConstellationCode code = findIt->second;
+            std::cout << code << std::endl;
+        }
+        else
+        {
+            assert(false);
+        }
+        
         wholeSky.AddStar(star);
         //std::cout << *star << std::string(10, '#') << std::endl;
         count++;
