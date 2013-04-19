@@ -8,13 +8,14 @@
 
 #include <QApplication>
 #include <QPushButton>
+#include "MainWindow.h"
 
 int main(int argc, char **argv)
 {
-    QApplication app (argc, argv);
-    
-    QPushButton button ("SkyAtlas !");
-    button.show();
-    
+    //Q_INIT_RESOURCE(basicdrawing);
+
+    QApplication app(argc, argv);
+    FrontEnd::MainWindow window;
+    window.show();
     return app.exec();
 }

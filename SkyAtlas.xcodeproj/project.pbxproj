@@ -12,6 +12,11 @@
 		9F0D10421720A0B0002D12F1 /* Constellation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D103C1720A0B0002D12F1 /* Constellation.cpp */; };
 		9F0D10431720A0B0002D12F1 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D103E1720A0B0002D12F1 /* Sky.cpp */; };
 		9F0D10441720A0B0002D12F1 /* Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D10401720A0B0002D12F1 /* Star.cpp */; };
+		9F0D104D1720AFE5002D12F1 /* StereographicProjection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D103717209FE3002D12F1 /* StereographicProjection.cpp */; };
+		9F0D104E1720AFE9002D12F1 /* Projection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D103517209FE3002D12F1 /* Projection.cpp */; };
+		9F0D104F1720AFEC002D12F1 /* Star.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D10401720A0B0002D12F1 /* Star.cpp */; };
+		9F0D10501720AFF0002D12F1 /* Sky.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D103E1720A0B0002D12F1 /* Sky.cpp */; };
+		9F0D10511720AFF5002D12F1 /* Constellation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D103C1720A0B0002D12F1 /* Constellation.cpp */; };
 		9FAE9B3E16DE866E0014C9EF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9FAE9B3D16DE866E0014C9EF /* main.cpp */; };
 		9FAE9B4016DE866E0014C9EF /* SkyAtlas.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */; };
 		9FAE9B4D16DFE73F0014C9EF /* stars.dat in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9FAE9B4716DE86D60014C9EF /* stars.dat */; };
@@ -54,6 +59,11 @@
 		9F0D103F1720A0B0002D12F1 /* Sky.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sky.h; sourceTree = "<group>"; };
 		9F0D10401720A0B0002D12F1 /* Star.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Star.cpp; sourceTree = "<group>"; };
 		9F0D10411720A0B0002D12F1 /* Star.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Star.h; sourceTree = "<group>"; };
+		9F0D10491720AFB5002D12F1 /* libSkyAtlasStaticLibrary.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSkyAtlasStaticLibrary.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0D10521721B0E2002D12F1 /* MainWindow.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainWindow.cpp; sourceTree = "<group>"; };
+		9F0D10531721B0E2002D12F1 /* MainWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainWindow.h; sourceTree = "<group>"; };
+		9F0D10541721B461002D12F1 /* SkyWidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SkyWidget.cpp; sourceTree = "<group>"; };
+		9F0D10551721B461002D12F1 /* SkyWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkyWidget.h; sourceTree = "<group>"; };
 		9FAE9B3916DE866E0014C9EF /* SkyAtlas */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SkyAtlas; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FAE9B3D16DE866E0014C9EF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9FAE9B3F16DE866E0014C9EF /* SkyAtlas.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = SkyAtlas.1; sourceTree = "<group>"; };
@@ -63,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F0D10461720AFB5002D12F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FAE9B3616DE866E0014C9EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -77,6 +94,10 @@
 			isa = PBXGroup;
 			children = (
 				9F0D103217209B20002D12F1 /* SkyAtlasFrontEnd.cpp */,
+				9F0D10521721B0E2002D12F1 /* MainWindow.cpp */,
+				9F0D10531721B0E2002D12F1 /* MainWindow.h */,
+				9F0D10541721B461002D12F1 /* SkyWidget.cpp */,
+				9F0D10551721B461002D12F1 /* SkyWidget.h */,
 			);
 			path = SkyAtlasFrontEnd;
 			sourceTree = "<group>";
@@ -120,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAE9B3916DE866E0014C9EF /* SkyAtlas */,
+				9F0D10491720AFB5002D12F1 /* libSkyAtlasStaticLibrary.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,7 +162,34 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		9F0D10471720AFB5002D12F1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		9F0D10481720AFB5002D12F1 /* SkyAtlasStaticLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F0D104A1720AFB5002D12F1 /* Build configuration list for PBXNativeTarget "SkyAtlasStaticLibrary" */;
+			buildPhases = (
+				9F0D10451720AFB5002D12F1 /* Sources */,
+				9F0D10461720AFB5002D12F1 /* Frameworks */,
+				9F0D10471720AFB5002D12F1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkyAtlasStaticLibrary;
+			productName = SkyAtlasStaticLibrary;
+			productReference = 9F0D10491720AFB5002D12F1 /* libSkyAtlasStaticLibrary.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		9FAE9B3816DE866E0014C9EF /* SkyAtlas */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FAE9B4316DE866E0014C9EF /* Build configuration list for PBXNativeTarget "SkyAtlas" */;
@@ -181,11 +230,24 @@
 			projectRoot = "";
 			targets = (
 				9FAE9B3816DE866E0014C9EF /* SkyAtlas */,
+				9F0D10481720AFB5002D12F1 /* SkyAtlasStaticLibrary */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F0D10451720AFB5002D12F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F0D104D1720AFE5002D12F1 /* StereographicProjection.cpp in Sources */,
+				9F0D104E1720AFE9002D12F1 /* Projection.cpp in Sources */,
+				9F0D104F1720AFEC002D12F1 /* Star.cpp in Sources */,
+				9F0D10501720AFF0002D12F1 /* Sky.cpp in Sources */,
+				9F0D10511720AFF5002D12F1 /* Constellation.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FAE9B3516DE866E0014C9EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +264,32 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		9F0D104B1720AFB5002D12F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = /Users/adamfrench/boost/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F0D104C1720AFB5002D12F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				EXECUTABLE_PREFIX = lib;
+				HEADER_SEARCH_PATHS = /Users/adamfrench/boost/include;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9FAE9B4116DE866E0014C9EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -272,6 +360,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F0D104A1720AFB5002D12F1 /* Build configuration list for PBXNativeTarget "SkyAtlasStaticLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F0D104B1720AFB5002D12F1 /* Debug */,
+				9F0D104C1720AFB5002D12F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		9FAE9B3316DE866E0014C9EF /* Build configuration list for PBXProject "SkyAtlas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
