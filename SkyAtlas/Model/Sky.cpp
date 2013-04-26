@@ -123,11 +123,11 @@ coverage(coverage)
     boost::shared_ptr<SkyAtlas::SkyRectangle>,
     boost::shared_ptr<SkyAtlas::SkyRectangle> > split;
     
-    if (direction == SPLIT_DIRECTION::RECTACENSION_SPLIT)
+    if (direction == SkyAtlas::RECTACENSION_SPLIT)
     {
         split = coverage->SplitByRectacension();
     }
-    else if (direction == SPLIT_DIRECTION::DECLINATION_SPLIT)
+    else if (direction == SkyAtlas::DECLINATION_SPLIT)
     {
         split = coverage->SplitByDeclination();
     }
@@ -213,6 +213,19 @@ void SkyAtlas::SkyGrid::VisitStars(boost::shared_ptr<SkyRectangle> area, void (*
     }
 }
 
+void SkyAtlas::SkyGrid::VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>, void* context), void* context)
+{
+    if (sky1->GetCoverage()->Overlaps(area))
+    {
+        sky1->VisitStars(area, visitor, context);
+    }
+    
+    if (sky2->GetCoverage()->Overlaps(area))
+    {
+        sky2->VisitStars(area, visitor, context);
+    }
+}
+
 SkyAtlas::SkyGrid::~SkyGrid()
 {
 }
@@ -245,8 +258,8 @@ bool SkyAtlas::SkyPatch::NeedsToSplit()
 
 boost::shared_ptr<SkyAtlas::Sky> SkyAtlas::SkyPatch::Split()
 {
-    boost::shared_ptr<SkyGrid> rectacensionGrid(new SkyGrid(coverage, SPLIT_DIRECTION::RECTACENSION_SPLIT));
-    boost::shared_ptr<SkyGrid> declinationGrid(new SkyGrid(coverage, SPLIT_DIRECTION::DECLINATION_SPLIT));
+    boost::shared_ptr<SkyGrid> rectacensionGrid(new SkyGrid(coverage, SkyAtlas::RECTACENSION_SPLIT));
+    boost::shared_ptr<SkyGrid> declinationGrid(new SkyGrid(coverage, SkyAtlas::DECLINATION_SPLIT));
 
     for (std::vector<boost::shared_ptr<SkyAtlas::Star> >::iterator it = stars.begin();
          it != stars.end();
@@ -287,6 +300,19 @@ void SkyAtlas::SkyPatch::VisitStars(boost::shared_ptr<SkyRectangle> area, void (
         if (area->CouldContain(*it))
         {
             visitor(*it);
+        }
+    }
+}
+
+void SkyAtlas::SkyPatch::VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>, void* context), void* context)
+{
+    for (std::vector<boost::shared_ptr<SkyAtlas::Star> >::iterator it = stars.begin();
+         it != stars.end();
+         ++it)
+    {
+        if (area->CouldContain(*it))
+        {
+            visitor(*it, context);
         }
     }
 }

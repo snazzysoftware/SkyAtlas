@@ -75,6 +75,8 @@ namespace SkyAtlas
         
         virtual void VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>)) = 0;
         
+        virtual void VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>, void* context), void* context) = 0;
+        
         virtual ~Sky() { }
         
     };
@@ -103,6 +105,8 @@ namespace SkyAtlas
         virtual std::vector<boost::shared_ptr<SkyAtlas::Star> >::size_type Inbalance();
         
         virtual void VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>));
+        
+        virtual void VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>, void* context), void* context);
         
         virtual ~SkyGrid();
         
@@ -136,6 +140,8 @@ namespace SkyAtlas
         virtual std::vector<boost::shared_ptr<SkyAtlas::Star> >::size_type Inbalance();
         
         virtual void VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>));
+        
+        virtual void VisitStars(boost::shared_ptr<SkyRectangle> area, void (*visitor)(boost::shared_ptr<Star>, void* context), void* context);
         
         virtual ~SkyPatch();
         

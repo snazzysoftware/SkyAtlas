@@ -10,6 +10,9 @@
 #define __SkyAtlas__MainWindow__
 
 #include <QWidget>
+#include <boost/shared_ptr.hpp>
+#include "../SkyAtlas/Model/Sky.h"
+#include "../SkyAtlas/View/StereographicProjection.h"
 
 namespace FrontEnd
 {
@@ -24,7 +27,19 @@ namespace FrontEnd
         MainWindow();
         
     private:
+
+        /// Loads the star database into the whole sky grid and initializes
+        /// the stereographic projection ready for rendering.
+        void LoadSky();
+
         SkyWidget *skyWidget;
+
+        /// The whole sky grid.
+        boost::shared_ptr<SkyAtlas::SkyGrid> wholeSky;
+
+        /// The stereographic viewport projection.
+        boost::shared_ptr<SkyAtlas::StereographicProjection> projection;
+
     };
 
 }

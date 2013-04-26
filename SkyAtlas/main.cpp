@@ -14,7 +14,7 @@
 #include "Constellation.h"
 #include "Sky.h"
 #include "StereographicProjection.h"
-
+/*
 std::ostream & operator<<(std::ostream &os, const SkyAtlas::Star &p)
 {
     os << "Henry Draper Catalogue Number: " << p.henreyDraperCatalogueNumber << std::endl;
@@ -64,7 +64,7 @@ std::ostream & operator<<(std::ostream &os, const SkyAtlas::Constellation &p)
         os << std::endl;
     }
     return os;
-}
+}*/
 
 boost::shared_ptr<SkyAtlas::StereographicProjection> projection;
 
@@ -73,6 +73,14 @@ void visitor(boost::shared_ptr<SkyAtlas::Star> star)
     std::cout << "Visiting star " << star->bscCatalogueNumber << " in " << star->constellation << std::endl;
     std::pair<double, double> cartesianPosition = projection->ProjectPoint(std::pair<double, double>(star->rectascension, star->declination));
     std::cout << "(Rectacension, Declination) (" << star->rectascension << ", " << star->declination << ") maps to (X, Y) (" << cartesianPosition.first << ", " << cartesianPosition.second << ")" << std::endl << std::endl;
+}
+
+void visitorWithContext(boost::shared_ptr<SkyAtlas::Star> star, void* myContext)
+{
+    int* pContext = static_cast<int*>(myContext);
+    std::cout << *pContext << ": Visiting star " << star->bscCatalogueNumber << " in " << star->constellation << std::endl;
+    std::pair<double, double> cartesianPosition = projection->ProjectPoint(std::pair<double, double>(star->rectascension, star->declination));
+    std::cout << *pContext << ": (Rectacension, Declination) (" << star->rectascension << ", " << star->declination << ") maps to (X, Y) (" << cartesianPosition.first << ", " << cartesianPosition.second << ")" << std::endl << std::endl;
 }
 
 int main(int argc, const char * argv[])
@@ -123,9 +131,10 @@ int main(int argc, const char * argv[])
     projection = boost::shared_ptr<SkyAtlas::StereographicProjection>(
         new SkyAtlas::StereographicProjection(viewerRectacensionDeclination, viewerAngle));
     boost::shared_ptr<SkyAtlas::SkyRectangle> viewport = projection->GetViewport();
-    std::cout << *projection;
-    std::cout << *viewport;
-    wholeSky.VisitStars(viewport, visitor);
+    //std::cout << *projection;
+    //std::cout << *viewport;
+    int myInt = 42;
+    wholeSky.VisitStars(viewport, visitorWithContext, &myInt);
     
     // Plot a small viewport of stars
     
@@ -135,7 +144,7 @@ int main(int argc, const char * argv[])
     while (linesInput.good())
     {
         const SkyAtlas::Constellation constellation(linesInput);
-        std::cout << constellation << std::string(10, '#') << std::endl;
+        //std::cout << constellation << std::string(10, '#') << std::endl;
         count++;
     }
     std::cout << count << " constellations." << std::endl;

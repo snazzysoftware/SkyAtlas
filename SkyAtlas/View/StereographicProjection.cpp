@@ -45,8 +45,20 @@ std::pair<double, double> SkyAtlas::StereographicProjection::ProjectPoint(
     // The celestial spherical co-ordinate 'Declination' (azimuth angle) is B.
     // The atlas cartesian co-ordinate 'X' is X.
     // The atlas cartesian co-ordinate 'Y' is Y.
-    double a = rectacensionDeclination.first;
-    double b = rectacensionDeclination.second;
+    double a = rectacensionDeclination.first - viewerRectacensionDeclination.first;
+    double b = rectacensionDeclination.second - viewerRectacensionDeclination.second;
+    
+    a = fmod(a, 360.0);
+    if (a < 0.0)
+    {
+        a += 360.0;
+    }
+    
+    b = fmod(b, 360.0);
+    if (b < 0.0)
+    {
+        b += 360.0;
+    }
     
     double sinA = sin(a);
     double sinB = sin(b);

@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Adam French. All rights reserved.
 //
 
+#include <fstream>
 #include <QtGui>
 #include <QGridLayout>
 #include "MainWindow.h"
@@ -13,7 +14,8 @@
 
 FrontEnd::MainWindow::MainWindow()
 {
-    skyWidget = new SkyWidget;
+    LoadSky();
+    skyWidget = new SkyWidget(0, wholeSky, projection);
     
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->setColumnStretch(0, 1);
@@ -22,4 +24,25 @@ FrontEnd::MainWindow::MainWindow()
     setLayout(mainLayout);
     
     setWindowTitle(tr("SkyAtlas"));
+}
+
+void FrontEnd::MainWindow::LoadSky()
+{
+    // Create a sky to put the stars into
+    boost::shared_ptr<SkyAtlas::SkyRectangle> wholeSkyRectangle(new SkyAtlas::SkyRectangle(0.0, 24.0, -90.0, 90.0));
+    wholeSky = boost::shared_ptr<SkyAtlas::SkyGrid>(new SkyAtlas::SkyGrid(wholeSkyRectangle));
+
+    // Read in the star catalogue
+    std::ifstream starsInput("/Users/adamfrench/Documents/XCode/SkyAtlas/SkyAtlas/SkyAtlas/stars.dat", std::ifstream::in);
+    while (starsInput.good())
+    {
+        boost::shared_ptr<SkyAtlas::Star> star(new SkyAtlas::Star(starsInput));
+        wholeSky->AddStar(star);
+    }
+
+    // Initialize the stereographic projection
+    std::pair<double, double> viewerRectacensionDeclination(-10.0, -10.0);
+    double viewerAngle = 10.0;
+    projection = boost::shared_ptr<SkyAtlas::StereographicProjection>(
+        new SkyAtlas::StereographicProjection(viewerRectacensionDeclination, viewerAngle));
 }

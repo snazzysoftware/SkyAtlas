@@ -11,7 +11,7 @@
 
 #include <boost/shared_ptr.hpp>
 #include <utility>
-#include "Sky.h"
+#include "../Model/Sky.h"
 
 namespace SkyAtlas
 {
