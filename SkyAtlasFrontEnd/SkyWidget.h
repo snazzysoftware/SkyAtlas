@@ -31,6 +31,10 @@ namespace FrontEnd
                 boost::shared_ptr<SkyAtlas::SkyGrid>(
                     new SkyAtlas::SkyGrid(boost::shared_ptr<SkyAtlas::SkyRectangle>(
                                               new SkyAtlas::SkyRectangle(0.0, 360.0, -90.0, 90.0)))),
+                  boost::shared_ptr<SkyAtlas::Sky> equatorialGrid =
+                boost::shared_ptr<SkyAtlas::Sky>(
+                    new SkyAtlas::SkyGrid(boost::shared_ptr<SkyAtlas::SkyRectangle>(
+                                              new SkyAtlas::SkyRectangle(0.0, 360.0, -90.0, 90.0)))),
                   boost::shared_ptr<SkyAtlas::StereographicProjection> projection =
                 boost::shared_ptr<SkyAtlas::StereographicProjection>(
                     new SkyAtlas::StereographicProjection(std::pair<double, double>(0.0, 0.0), 90.0)));
@@ -55,6 +59,7 @@ namespace FrontEnd
         
     private:
         boost::shared_ptr<SkyAtlas::SkyGrid> wholeSky;
+        boost::shared_ptr<SkyAtlas::Sky> equatorialGrid;
         boost::shared_ptr<SkyAtlas::StereographicProjection> projection;
 
     };

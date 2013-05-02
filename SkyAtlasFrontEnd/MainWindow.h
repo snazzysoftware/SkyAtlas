@@ -37,6 +37,9 @@ namespace FrontEnd
         /// The whole sky grid.
         boost::shared_ptr<SkyAtlas::SkyGrid> wholeSky;
 
+        /// The equatorial grid
+        boost::shared_ptr<SkyAtlas::Sky> equatorialGrid;
+
         /// The stereographic viewport projection.
         boost::shared_ptr<SkyAtlas::StereographicProjection> projection;
 

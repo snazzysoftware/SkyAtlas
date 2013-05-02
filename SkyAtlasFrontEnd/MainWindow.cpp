@@ -9,13 +9,14 @@
 #include <fstream>
 #include <QtGui>
 #include <QGridLayout>
+#include "../SkyAtlas/Model/Grids.h"
 #include "MainWindow.h"
 #include "SkyWidget.h"
 
 FrontEnd::MainWindow::MainWindow()
 {
     LoadSky();
-    skyWidget = new SkyWidget(0, wholeSky, projection);
+    skyWidget = new SkyWidget(0, wholeSky, equatorialGrid, projection);
     
     QGridLayout *mainLayout = new QGridLayout;
     mainLayout->setColumnStretch(0, 1);
@@ -39,6 +40,9 @@ void FrontEnd::MainWindow::LoadSky()
         boost::shared_ptr<SkyAtlas::Star> star(new SkyAtlas::Star(starsInput));
         wholeSky->AddStar(star);
     }
+
+    // Generate the equatorial grid
+    equatorialGrid = SkyAtlas::BuildEquatorialGrid(360.0 / 100, 24.0 / 100);
 
     // Initialize the stereographic projection
     std::pair<double, double> viewerRectacensionDeclination(-10.0, -10.0);

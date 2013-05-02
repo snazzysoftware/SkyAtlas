@@ -28,7 +28,8 @@ SkyAtlas::Star::Star(unsigned long henreyDraperCatalogueNumber,
     flamsteedNumber(flamsteedNumber),
     label(label),
     constellation(constellation),
-    spectralClass(spectralClass)
+    spectralClass(spectralClass),
+    connectedStars()
 {
 }
 
@@ -39,7 +40,8 @@ SkyAtlas::Star::Star(std::istream &input) :
     declination(0),
     visualBrightness(0),
     bvBrightness(0),
-    flamsteedNumber(0)
+    flamsteedNumber(0),
+    connectedStars()
 {
     std::string numericLine;
     getline(input, numericLine);

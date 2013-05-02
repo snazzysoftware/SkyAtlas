@@ -9,8 +9,10 @@
 #ifndef __SkyAtlas__Star__
 #define __SkyAtlas__Star__
 
+#include <boost/shared_ptr.hpp>
 #include <iostream>
 #include <string>
+#include <vector>
 
 namespace SkyAtlas
 {
@@ -27,6 +29,9 @@ namespace SkyAtlas
         std::string label;
         std::string constellation;
         std::string spectralClass;
+        
+        // Connected neighbour stars
+        std::vector<boost::shared_ptr<Star> > connectedStars;
     
         // Create a Star from numeric values
         Star(unsigned long henreyDraperCatalogueNumber,

@@ -13,6 +13,7 @@ SOURCES = SkyAtlasFrontEnd/SkyAtlasFrontEnd.cpp \
 SkyAtlasFrontEnd/MainWindow.cpp \
 SkyAtlasFrontEnd/SkyWidget.cpp \
 SkyAtlas/Model/Constellation.cpp \
+SkyAtlas/Model/Grids.cpp \
 SkyAtlas/Model/Sky.cpp \
 SkyAtlas/Model/Star.cpp \
 SkyAtlas/View/Projection.cpp \

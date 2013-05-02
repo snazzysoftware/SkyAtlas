@@ -13,8 +13,12 @@
 
 FrontEnd::SkyWidget::SkyWidget(QWidget *parent,
                                boost::shared_ptr<SkyAtlas::SkyGrid> wholeSky,
+                               boost::shared_ptr<SkyAtlas::Sky> equatorialGrid,
                                boost::shared_ptr<SkyAtlas::StereographicProjection> projection)
-    : QWidget(parent), wholeSky(wholeSky), projection(projection)
+    : QWidget(parent),
+      wholeSky(wholeSky),
+      equatorialGrid(equatorialGrid),
+      projection(projection)
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
@@ -52,6 +56,8 @@ void starPlotVisitor(boost::shared_ptr<SkyAtlas::Star> star, void* context)
                 std::pair<double, double>(star->rectascension, star->declination));
 
     painter->setPen(Qt::black);
+    int starDiameter = 10;
+    double zoomFactor = 10.0;
 
     // Set approximate spectral colour
     if (star->spectralClass.substr(0, 1).compare("O") == 0)
@@ -77,10 +83,45 @@ void starPlotVisitor(boost::shared_ptr<SkyAtlas::Star> star, void* context)
     else
         painter->setBrush(QBrush(Qt::lightGray, Qt::SolidPattern));
 
-    painter->drawEllipse((cartesianPosition.first * 20.0 + 250.0),
-                         (cartesianPosition.second * 20.0 + 250.0),
-                         10,
-                         10);
+    painter->drawEllipse((cartesianPosition.first * zoomFactor + painter->window().width() / 2.0) - starDiameter / 2,
+                         (cartesianPosition.second * zoomFactor + painter->window().height() / 2.0) - starDiameter / 2,
+                         starDiameter,
+                         starDiameter);
+}
+
+void gridPlotVisitor(boost::shared_ptr<SkyAtlas::Star> star, void* context)
+{
+    std::pair<boost::shared_ptr<QPainter>, boost::shared_ptr<SkyAtlas::StereographicProjection> >* pContext =
+            (std::pair<boost::shared_ptr<QPainter>, boost::shared_ptr<SkyAtlas::StereographicProjection> >*)(context);
+    boost::shared_ptr<QPainter> painter = pContext->first;
+    boost::shared_ptr<SkyAtlas::StereographicProjection> projection = pContext->second;
+
+    std::pair<double, double> cartesianPosition = projection->ProjectPoint(
+                std::pair<double, double>(star->rectascension, star->declination));
+    int pointDiameter = 10;
+    painter->setPen(Qt::black);
+    painter->setBrush(QBrush(Qt::green, Qt::SolidPattern));
+
+    double zoomFactor = 10.0;
+
+    painter->drawEllipse((cartesianPosition.first * zoomFactor + painter->window().width() / 2.0) - pointDiameter / 2,
+                         (cartesianPosition.second * zoomFactor + painter->window().height() / 2.0) - pointDiameter / 2,
+                         pointDiameter,
+                         pointDiameter);
+
+    for (std::vector<boost::shared_ptr<SkyAtlas::Star> >::const_iterator it = star->connectedStars.begin();
+         it != star->connectedStars.end();
+         ++it)
+    {
+        std::pair<double, double> connectedCartesianPosition = projection->ProjectPoint(
+                    std::pair<double, double>((*it)->rectascension, (*it)->declination));
+        painter->drawLine((cartesianPosition.first * zoomFactor + painter->window().width() / 2.0),
+                          (cartesianPosition.second * zoomFactor + painter->window().height() / 2.0),
+                          (connectedCartesianPosition.first * zoomFactor + painter->window().width() / 2.0),
+                          (connectedCartesianPosition.second * zoomFactor + painter->window().height() / 2.0));
+    }
+
+    //std::cout << "(" << star->declination << ", " << star->rectascension << ")" << std::endl;
 }
 
 void FrontEnd::SkyWidget::paintEvent(QPaintEvent * /* event */)
@@ -93,6 +134,9 @@ void FrontEnd::SkyWidget::paintEvent(QPaintEvent * /* event */)
     painter->setRenderHint(QPainter::Antialiasing, true);
     std::pair<boost::shared_ptr<QPainter>, boost::shared_ptr<SkyAtlas::StereographicProjection> > context(painter, projection);
     wholeSky->VisitStars(viewport, starPlotVisitor, &context);
+
+    // Draw the equatorial grid
+    equatorialGrid->VisitStars(viewport, gridPlotVisitor, &context);
 
     // Draw the border
     painter->setPen(QPen(Qt::gray, 2, Qt::SolidLine, Qt::FlatCap));
